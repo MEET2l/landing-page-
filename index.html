@@ -1,285 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpacECE Teacher Training Program</title>
+<script>
+/* --------------------------------------------------------
+   1) FADE-IN + SLIDE-UP ON SCROLL (Works on all sections)
+--------------------------------------------------------- */
+const allSections = document.querySelectorAll("section");
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            margin: 0;
-            font-family: "Poppins", sans-serif;
-            background: #FFF7E6;
-            color: #2A2A2A;
+const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
         }
+    });
+}, { threshold: 0.2 });
 
-        /* HEADER */
-        header {
-            background: #ffffff;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        header h1 {
-            margin: 0;
-            color: #FF8A00;
-            font-size: 30px;
-            font-weight: 700;
-        }
-        header nav a {
-            margin: 0 12px;
-            font-weight: 500;
-            color: #2A2A2A;
-        }
-
-        /* BUTTONS */
-        .btn {
-            padding: 12px 28px;
-            border-radius: 10px;
-            font-weight: 600;
-            display: inline-block;
-            cursor: pointer;
-        }
-        .btn-primary {
-            background: #FF8A00;
-            color: white;
-        }
-        .btn-primary:hover {
-            background: #e97500;
-        }
-        .btn-outline {
-            border: 2px solid #FF8A00;
-            color: #FF8A00;
-            background: transparent;
-        }
-        .btn-outline:hover {
-            background: #FFE5C4;
-        }
-
-        /* HERO */
-        .hero {
-            background: linear-gradient(to right, #FFC737, #FF8A00);
-            padding: 120px 40px;
-            text-align: center;
-            color: #fff;
-        }
-        .hero h2 {
-            font-size: 48px;
-            margin: 0;
-            font-weight: 700;
-        }
-        .hero p {
-            font-size: 20px;
-            margin-top: 10px;
-            opacity: 0.95;
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 70px 50px;
-            text-align: center;
-        }
-        h3 {
-            font-size: 32px;
-            color: #FF8A00;
-            margin-bottom: 10px;
-        }
-        .divider {
-            height: 4px;
-            width: 80px;
-            background: #FFC737;
-            border-radius: 10px;
-            margin: 15px auto 30px;
-        }
-
-        /* CARDS */
-        .cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-        }
-        .card {
-            background: white;
-            padding: 25px;
-            width: 280px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        .card img {
-            width: 70px;
-        }
-        .card h4 {
-            margin: 15px 0 10px;
-            color: #FF8A00;
-            font-size: 20px;
-        }
-        .card p {
-            font-size: 16px;
-        }
-
-        /* FAQ */
-        .faq-item {
-            margin: 15px auto;
-            max-width: 800px;
-            text-align: left;
-        }
-        .faq-item h5 {
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            color: #FF8A00;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #FF8A00;
-            color: white;
-            padding: 25px;
-            text-align: center;
-            font-size: 16px;
-        }
-    </style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-<header>
-    <h1>SpacECE</h1>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#learn">Learn</a>
-        <a href="#register" class="btn btn-primary">Apply</a>
-    </nav>
-</header>
-
-<!-- SECTION 1: HERO -->
-<section class="hero">
-    <h2>Teacher Training Program 2025</h2>
-    <p>Become a Certified Early Childhood Educator</p>
-    <br>
-    <a href="#register" class="btn btn-primary">Register Now</a>
-</section>
-
-<!-- SECTION 2: ABOUT -->
-<section id="about">
-    <h3>About the Program</h3>
-    <div class="divider"></div>
-    <p>
-        A modern and practical teacher training program designed to prepare you 
-        for a successful career in Early Childhood Education.
-    </p>
-</section>
-
-<!-- SECTION 3: WHAT YOU WILL LEARN -->
-<section id="learn">
-    <h3>What You Will Learn</h3>
-    <div class="divider"></div>
-    <div class="cards">
-        <div class="card">
-            <img src="https://via.placeholder.com/70" alt="">
-            <h4>ECE Foundations</h4>
-            <p>Understanding early learning and child psychology.</p>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/70" alt="">
-            <h4>Classroom Skills</h4>
-            <p>Learn effective ways to manage classrooms.</p>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/70" alt="">
-            <h4>Activity Planning</h4>
-            <p>Create fun and meaningful learning activities.</p>
-        </div>
-    </div>
-</section>
-
-<!-- SECTION 4: HIGHLIGHTS -->
-<section>
-    <h3>Program Highlights</h3>
-    <div class="divider"></div>
-    <div class="cards">
-        <div class="card"><h4>Live & Recorded Sessions</h4><p>Learn at your speed.</p></div>
-        <div class="card"><h4>Assignments</h4><p>Build teaching experience.</p></div>
-        <div class="card"><h4>Certification</h4><p>Official training certificate.</p></div>
-        <div class="card"><h4>Placement Support</h4><p>Guidance after training.</p></div>
-    </div>
-</section>
-
-<!-- SECTION 5: WHY CHOOSE US -->
-<section>
-    <h3>Why Choose SpacECE?</h3>
-    <div class="divider"></div>
-    <p>
-        Expert trainers, practical modules, recognized certification, 
-        affordable price, and flexible learning.
-    </p>
-</section>
-
-<!-- SECTION 6: WHO CAN APPLY -->
-<section>
-    <h3>Who Can Apply?</h3>
-    <div class="divider"></div>
-    <div class="cards">
-        <div class="card"><h4>Students</h4></div>
-        <div class="card"><h4>Teachers</h4></div>
-        <div class="card"><h4>Parents</h4></div>
-        <div class="card"><h4>Professionals</h4></div>
-    </div>
-</section>
-
-<!-- SECTION 7: PROGRAM DETAILS -->
-<section>
-    <h3>Program Details</h3>
-    <div class="divider"></div>
-    <p><b>Duration:</b> 3 Months (Online)<br>
-       <b>Batches:</b> Morning / Evening / Weekend<br>
-       <b>Certification:</b> Yes</p>
-</section>
-
-<!-- SECTION 8: TESTIMONIALS -->
-<section>
-    <h3>Testimonials</h3>
-    <div class="divider"></div>
-    <p>“The best teacher training experience I ever had!”</p>
-    <p>“Very practical and useful for classroom teaching.”</p>
-</section>
-
-<!-- SECTION 9: FAQ -->
-<section>
-    <h3>FAQ</h3>
-    <div class="divider"></div>
-    <div class="faq-item">
-        <h5>Is this fully online?</h5>
-        <p>Yes, completely online with recordings.</p>
-    </div>
-    <div class="faq-item">
-        <h5>Do I get certified?</h5>
-        <p>Yes, certificate provided.</p>
-    </div>
-</section>
-
-<!-- SECTION 10: REGISTER -->
-<section id="register">
-    <h3>Register Now</h3>
-    <div class="divider"></div>
-    <p>Fill the form below to apply.</p>
+allSections.forEach(sec => fadeObserver.observe(sec));
+</script>
 
 
-</section>
+<script>
+/* --------------------------------------------------------
+   2) ACTIVITY SLIDER (Vanilla JS)
+--------------------------------------------------------- */
+let actIndex = 0;
+const actTrack = document.querySelector(".activity-slider");
+const actSlides = document.querySelectorAll(".activity-slider .slide");
+const actTotal = actSlides.length;
 
-<!-- SECTION 11: FOOTER -->
-<footer>
-    © 2025 SpacECE Teacher Training Program | support@spacece.org
-</footer>
+document.querySelector(".slider-btn.right").onclick = () => {
+    actIndex = (actIndex + 1) % actTotal;
+    actTrack.style.transform = `translateX(-${actIndex * 320}px)`;
+};
 
-</body>
-</html>
+document.querySelector(".slider-btn.left").onclick = () => {
+    actIndex = (actIndex - 1 + actTotal) % actTotal;
+    actTrack.style.transform = `translateX(-${actIndex * 320}px)`;
+};
+</script>
+
+
+<script>
+/* --------------------------------------------------------
+   3) HIGHLIGHTS SLIDER (Vanilla JS)
+--------------------------------------------------------- */
+let higIndex = 0;
+const higTrack = document.querySelector(".highlights-slider");
+const higItems = document.querySelectorAll(".highlights-slider .highlight-item");
+const higTotal = higItems.length;
+
+document.querySelector(".highlight-btn.right").onclick = () => {
+    higIndex = (higIndex + 1) % higTotal;
+    higTrack.style.transform = `translateX(-${higIndex * 100}%)`;
+};
+
+document.querySelector(".highlight-btn.left").onclick = () => {
+    higIndex = (higIndex - 1 + higTotal) % higTotal;
+    higTrack.style.transform = `translateX(-${higIndex * 100}%)`;
+};
+</script>
+
+
+<script>
+/* --------------------------------------------------------
+   4) FAQ ACCORDION (Click to Open/Close)
+--------------------------------------------------------- */
+document.querySelectorAll(".faq-question").forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("active");
+    });
+});
+</script>
